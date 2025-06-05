@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="ui big form" style="margin: auto; max-width: 650px;">
+    <h1>
+        {% block title %} Atualizar Tarefa {% endblock %}
+    </h1>
+    <hr>
+    <br/>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="ui big form" style="margin: auto; max-width: 650px;">
+    <form class="ui form" method="post">
+        <div class="field">
+            <label>Título</label>
+            <input type="text" name="title" id="title" placeholder="Título" value="{{ todo.title }}" required>
+        </div>
+
+        <div class="field">
+            <label>Descrição</label>
+            <textarea name="description" cols="80" id="description" placeholder="Description">{{ -request.form['description'] or todolist['description']}}                
+            </textarea>
+        </div>
+
+        <div class="field">
+            <div class="ui chekbox">
+                <input type="checkbox" name="status" id="status" {% if todolist.status %}checked{% endif %}>
+                <label>Finalizado</label>
+            </div>
+        </div>
+
+        <div>
+            <button class="ui positive basic button" type="submit">
+                <i class="save icon"></i>Salvar
+            </button>
+        </div>
+
+        <button class="ui negative basic button" type="button" onclick="history.back(-1)">
+            <i class="times icon"></i>Cancelar
+        </button>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
+
+{% block scripts %}

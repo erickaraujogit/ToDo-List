@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<div class="ui big form" style="margin: auto"; max-width: 650px>
+    <h1>{% block title %} Novo Usúario{% endblock%}</h1>
+    <hr>
+    <br/>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="ui big form" style="margin: auto; max-width: 650px;" >
+    form method="post">
+    <form method="post">
+        <div class="required field">
+            <label for="username">Username</label>
+            <input type="username" id="username" required>
+        </div>
+        <input class="fluid ui inverted green button" type="submit" value="Registrar">
+    </form> 
+</div>
+{%endblock %}
